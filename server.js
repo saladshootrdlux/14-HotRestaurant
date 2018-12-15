@@ -45,8 +45,12 @@ app.get('/', function (req, res) {
 app.get('/make', function (req, res) {
     res.sendFile(path.join(__dirname, "make.html"))
 });
-app.get('/view', function () {
+app.get('/view', function (req, res) {
     res.sendFile(path.join(__dirname, "view.html"))
+})
+
+app.get('/view/tables', function (req, res) {
+    res.json(tables);
 })
 
 
