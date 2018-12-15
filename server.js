@@ -32,6 +32,8 @@ var wating = [
     },
 ]
 
+var tables = [];
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 
@@ -50,14 +52,18 @@ app.get('/view', function () {
 
 
 app.post("/api/tables", function(req, res) {
-    var table = req.table;
+    var table = req.body;
 
-    console.log(table);
+    console.log(req.body);
   
     tables.push(table);
 });
 
 
+
+app.listen(PORT,function(){
+    console.log("listening at " + PORT)
+});
 
 
 
