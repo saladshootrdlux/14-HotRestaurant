@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Dependendencies
 var express = require("express");
 var path = require("path");
@@ -29,3 +30,4 @@ app.post("/api/tables", function (req, res) {
     console.log(table);
     tables.push(table);
 });
+
