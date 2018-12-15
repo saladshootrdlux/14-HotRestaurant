@@ -15,14 +15,21 @@ var tables = [];
 
 
 
+
+app.get("/api/view", function(req, res) {
+    return res.json(tables);
+});
+
+
 app.post("/api/tables", function(req, res) {
     var table = req.table;
 
     console.log(table);
   
     tables.push(table);
-  
-
 });
+
+
+
 
 
