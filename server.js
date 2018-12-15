@@ -1,4 +1,5 @@
-
+//Dependendencies
+var express = require("express");
 var fs = require("fs");
 
 var app = express();
@@ -53,7 +54,7 @@ app.get('/view/tables', function (req, res) {
 
 
 
-app.post("/api/tables", function(req, res) {
+app.post("/", function(req, res) {
     var table = req.body;
 
     console.log(req.body);

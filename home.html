@@ -24,7 +24,7 @@
             <hr>
             <div class="text-center">
                 <h3 class="text-center">Current Reservations and Waiting List</h3>
-                <a href="/add"><button class="btn btn-danger btn-lg"><i class="fa fa-cutlery" aria-hidden="true"></i>
+                <a href="/view"><button class="btn btn-danger btn-lg"><i class="fa fa-cutlery" aria-hidden="true"></i>
                         View Tables</button></a>
                 <a href="/"><button type="button" class="btn btn-lg btn-default"><i class="fa fa-home" aria-hidden="true"></i></button></a>
             </div>
@@ -62,7 +62,7 @@
                                 <input type="text" class="form-control" id="reserve_uniqueID">
                             </div>
 
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                            <button type="submit" id = "submit-btn" class="btn btn-primary submit">Submit</button>
                         </form>
 
                     </div>
@@ -78,33 +78,19 @@
         </div>
     </footer>
 
-    <!-- <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-
-
-      var table = {
-        placeName : "Falafel House", 
-        personName : "John Steinbeck",
-        time : "5:00"
-      }
-
-
-      $.post("/api/tables/", table);
-
-    });
-  </script> -->
     <script type="text/javascript">
-        $("#search-btn").on("click", function () {
+        $("#submit-btn").on("click", function () {
 
 
             var table = {
-                placeName: "Falafel House",
-                personName: "John Steinbeck",
-                time: "5:00"
+                reserve_name: $("#reserve_name").val(),
+                phone: $("#reserve_phone").val(),
+                id: $("#reserve_uniqueID").val(),
+                email : $("#reserve_email").val()
             }
 
 
-            $.post("/api/tables/", table);
+            $.post("/", table);
 
         });
     </script>
