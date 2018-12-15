@@ -17,48 +17,66 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="text-center">
-                <span class="glyphicon glyphicon-fire">
+                <i class="fa fa-fire" aria-hidden="true"></i>
                 </span>
                 Hot Restaurant
-                </h1>
-                <hr>
+            </h1>
+            <hr>
+            <div class="text-center">
                 <h3 class="text-center">Current Reservations and Waiting List</h3>
-                <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Book Table</button></a>
-        </div>
-        <div class="row">
-
-            <div class="col-12">
-
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h3><strong>Test?</strong></h3>
-                    </div>
-                    <div class="card-body">
-                        <input type="text" id="character-search" class="form-control">
-                        <br>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span>
-                                Find a table.</button>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h3><strong>Table Name</strong></h3>
-                    </div>
-                    <div class="card-body">
-                        <h2 id="name">Table</h2>
-                        <div id="stats">
-                            <h3><strong>Group:</strong> <span id="role"></span></h3>
-                            <h3><strong>Number:</strong> <span id="age">50</span></h3>
-                        </div>
-                    </div>
-                </div>
+                <a href="/add"><button class="btn btn-danger btn-lg"><i class="fa fa-cutlery" aria-hidden="true"></i>
+                        View Tables</button></a>
+                <a href="/"><button type="button" class="btn btn-lg btn-default"><i class="fa fa-home" aria-hidden="true"></i></button></a>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Reservation Page -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Table Reservation</h4>
+                    </div>
+                    <div class="panel-body">
+
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label for="">Name</label>
+                                <input type="text" class="form-control" id="reserve_name" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Phone Number</label>
+                                <input type="text" class="form-control" id="reserve_phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                <input type="text" class="form-control" id="reserve_email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Unique ID</label>
+                                <input type="text" class="form-control" id="reserve_uniqueID">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> </p>
+        </div>
+    </footer>
 
     <!-- <script type="text/javascript">
     $("#search-btn").on("click", function() {
@@ -84,21 +102,21 @@
       });
     });
   </script> -->
-  <script type="text/javascript">
-    $("#search-btn").on("click", function() {
- 
- 
-      var table = {
-        placeName : "Falafel House",
-        personName : "John Steinbeck",
-        time : "5:00"
-      }
- 
- 
-      $.post("/api/tables/", table);
- 
-    });
-  </script>
+    <script type="text/javascript">
+        $("#search-btn").on("click", function () {
+
+
+            var table = {
+                placeName: "Falafel House",
+                personName: "John Steinbeck",
+                time: "5:00"
+            }
+
+
+            $.post("/api/tables/", table);
+
+        });
+    </script>
 </body>
 
 </html>
